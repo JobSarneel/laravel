@@ -1,39 +1,83 @@
 <html>
 <head>
-	<!-- Latest compiled and minified CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/pure-min.css">
+	<!--[if lte IE 8]>
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-old-ie-min.css">
+    <![endif]-->
+    <!--[if gt IE 8]><!-->
+    <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.6.0/grids-responsive-min.css">
+    <!--<![endif]-->
 
-	<!-- Optional theme -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 
-	<!-- Latest compiled and minified JavaScript -->
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <style>
+    p,a,h1,h3,ul,form {
+    	font-family: 'Lato', sans-serif;	
+    }
+
+    p {
+    	text-align: justify;
+    }
+    
+    .l-box {
+        padding: 1em;
+        height: 0em;
+    }
+
+    .pure-menu-disabled .pure-menu-link:hover {
+    	background-color: transparent;
+    }
+
+    .pure-menu-active > .pure-menu-link,
+    .pure-menu-link:hover,
+    .pure-menu-link:focus {
+    	background-color: transparent;
+	}
+	</style>
+	
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>TEST</title>
+</head>
 
-	<body>
-		<nav class="navbar navbar-default">
-			<div class="container-fluid">
-				<ul class="nav navbar-nav">
-					<li {{ (Request::is('/') ? 'class=active' : '') }}>		<a href="/">Home</a></li>
-					@if (Auth::guest())
-					<li {{ (Request::is('register') ? 'class=active' : '') }}> <a href="register">Register</a></li>  
-					<li {{ (Request::is('login') ? 'class=active' : '') }}>	<a href="login">Login</a></li>
-					@else
-					<li {{ (Request::is('members') ? 'class=active' : '') }}> <a href="members">Members Only</a></li>  
-					<li {{ (Request::is('logout') ? 'class=active' : '') }}> <a href="logout">Logout</a></li>
-					@endif  
-				</ul>     				
-			</div><!-- /.container-fluid -->
-		</nav>
+<body>
+	<div class="pure-g-r">
+		<div class="pure-u-1-5"><div class="l-box"></div></div>
 
-		<div class="jumbotron">
-			<h1>@yield('contentHeading')</h1>
-			<p>@yield('content')</p>
-		</div>
+		<div class="pure-u-3-5">
+			<div class="l-box">
+				<div class="pure-menu pure-menu-horizontal">
+					<ul class="pure-menu-list">
+						
+						<li class="pure-menu-item {{ (Request::is('/') ? 'pure-menu-selected' : '') }}"><a href="/" class="pure-menu-link">Home</a></li>
+						<li class="pure-menu-item {{ (Request::is('register') ? 'pure-menu-selected' : '') }}"><a href="register" class="pure-menu-link">Register</a></li>
+						<li class="pure-menu-item {{ (Request::is('login') ? 'pure-menu-selected' : '') }}"><a href="login" class="pure-menu-link">Login</a></li>
+						
+						<li class="pure-menu-item {{ (Request::is('members') ? 'pure-menu-selected' : '') }}"><a href="members" class="pure-menu-link">Members Only</a></li>
+						<li class="pure-menu-item {{ (Request::is('logout') ? 'pure-menu-selected' : '') }}"><a href="logout" class="pure-menu-link">Logout</a></li>
+						
+					</ul>
+				</div>
+			</div>
+		</div> 
 
-		
+		<div class="pure-u-1-5"><div class="l-box"></div></div>
+	</div>
 
+		<div class="pure-g-r">
+		<div class="pure-u-1-5"><div class="l-box"></div></div>
 
+		<div class="pure-u-3-5">
+			{{-- <div class="l-box"> --}}
+				<h1>@yield("contentHeading")</h1>
+				@yield("content")
 
-	</body>
-	</html>
+			{{-- </div> --}}
+		</div> 
+
+		<div class="pure-u-1-5"><div class="l-box"></div></div>
+	</div>		
+
+	
+</body>
+</html>

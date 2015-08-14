@@ -21,13 +21,13 @@ Route::get('/members', function () {
 });
 
 Route::get('/register', function () {
-    return view('/auth/register');
+    return view('auth/register');
 });
 
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 Route::get('/login', function () {
-    return view('/auth/login');
+    return view('auth/login');
 });
 
 // Not sure whether this one needs a page...

@@ -1,13 +1,7 @@
-@extends('layouts.master')
 
-@section('contentHeading')
-	Members only
-@endsection
 
-@section('content')
-	Alleen ingelogde gebruikers kunnen deze pagina bezoeken.
-@endsection
+<form>
+    <label for="first_name">First Name</label>
+    <input name="first_name" type="text">
+</form>
 
-<!-- @section('sidebar')
-	@parent
-@endsection -->
