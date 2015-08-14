@@ -15,10 +15,13 @@
 			<div class="container-fluid">
 				<ul class="nav navbar-nav">
 					<li {{ (Request::is('/') ? 'class=active' : '') }}>		<a href="/">Home</a></li>
+					@if (Auth::guest())
 					<li {{ (Request::is('register') ? 'class=active' : '') }}> <a href="register">Register</a></li>  
 					<li {{ (Request::is('login') ? 'class=active' : '') }}>	<a href="login">Login</a></li>
+					@else
 					<li {{ (Request::is('members') ? 'class=active' : '') }}> <a href="members">Members Only</a></li>  
-					<li {{ (Request::is('logout') ? 'class=active' : '') }}> <a href="logout">Logout</a></li>  
+					<li {{ (Request::is('logout') ? 'class=active' : '') }}> <a href="logout">Logout</a></li>
+					@endif  
 				</ul>     				
 			</div><!-- /.container-fluid -->
 		</nav>

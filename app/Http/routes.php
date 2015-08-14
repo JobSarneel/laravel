@@ -21,19 +21,21 @@ Route::get('/members', function () {
 });
 
 Route::get('/register', function () {
-    return view('register');
+    return view('/auth/register');
 });
 
 Route::post('/register', 'Auth\AuthController@postRegister');
 
 Route::get('/login', function () {
-    return view('login');
+    return view('/auth/login');
 });
 
 // Not sure whether this one needs a page...
-Route::get('/logout', function () {
-    return view('logout');
-});
+// Route::get('/logout', function () {
+//     return view('logout');
+// });
+
+Route::get('/logout', 'Auth\AuthController@getLogout');
 
 Route::get('/home', function () {
     return view('home');
@@ -42,7 +44,7 @@ Route::get('/home', function () {
 // login url http://www.example.com/login
 // logout url http://www.example.com/logout
 // registration url http://www.example.com/register
-Route::controllers([
-    '' => 'Auth\AuthController', 
-    'password' => 'Auth\PasswordController',
-]);
+// Route::controllers([
+//     '' => 'Auth\AuthController', 
+//     'password' => 'Auth\PasswordController',
+// ]);

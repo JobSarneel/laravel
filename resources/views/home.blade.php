@@ -1,12 +1,13 @@
 @extends('layouts.master')
 
 @section('contentHeading')
-	Home
+Home
 @endsection
 
 @section('content')
-	Landingspagina voor geregistreerden <i>I suppose</i>...
-	Nee, want geen nieuwe mysql entry...
+<p>Landingspagina voor geregistreerden <i>I suppose</i>...</p>
+<p>Nee, want geen nieuwe mysql entry...</p>
+<p>Toch wel... Vigor is nu geregistreerd gebruiker! En als het goed is ben jij nummer drie.</p>
 @endsection
 
 <!-- @section('sidebar')
