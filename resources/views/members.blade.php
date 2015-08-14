@@ -1,7 +1,11 @@
+@extends('layouts.master')
 
+@section('contentHeading')
+Registratie geslaagd!
+@endsection
 
-<form>
-    <label for="first_name">First Name</label>
-    <input name="first_name" type="text">
-</form>
-
+@section('content') 
+<p>
+Welkom, {{Auth::user()->first_name}}. Nu je registratie geslaagd is kan je beginnen met je wijnkelder! Hieronder kan je meteen beginnen met het invoeren van je wijn.
+</p>
+@endsection

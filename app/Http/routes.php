@@ -30,6 +30,8 @@ Route::get('/login', function () {
     return view('auth/login');
 });
 
+Route::post('/login', 'Auth\AuthController@postLogin');
+
 // Not sure whether this one needs a page...
 // Route::get('/logout', function () {
 //     return view('logout');
