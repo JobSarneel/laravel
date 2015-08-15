@@ -5,7 +5,7 @@ Register
 @endsection
 
 @section('content') 
-<form class="pure-form pure-form-aligned" method="POST" action="register">
+<form class="pure-form pure-form-aligned" method="POST" action="/auth/register">
     <input type="hidden" name="_token" value="{{ csrf_token() }}">
       <fieldset>
          <div class="pure-control-group">

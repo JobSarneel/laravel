@@ -11,42 +11,38 @@
 |
 */
 
+//Homepage
 Route::get('/', function () {
     return view('start');
 });
 
-// Deze moet beveiligd worden
-Route::get('/members', function () {
-    return view('members');
-});
-
-Route::get('/register', function () {
+//Auth routes
+//Register
+Route::get('auth/register', function () {
     return view('auth/register');
 });
 
-Route::post('/register', 'Auth\AuthController@postRegister');
+Route::post('auth/register', 'Auth\AuthController@postRegister');
 
-Route::get('/login', function () {
-    return view('auth/login');
-});
+//Login
+Route::get('auth/login', 'Auth\AuthController@getLogin');
 
-Route::post('/login', 'Auth\AuthController@postLogin');
+Route::post('auth/login', 'Auth\AuthController@postLogin');
 
 // Not sure whether this one needs a page...
 // Route::get('/logout', function () {
 //     return view('logout');
 // });
 
-Route::get('/logout', 'Auth\AuthController@getLogout');
+Route::get('auth/logout', 'Auth\AuthController@getLogout');
 
-Route::get('/home', function () {
-    return view('home');
+//Routes only available when loged in: protection required!
+// Deze moet beveiligd worden
+Route::get('members', function () {
+    return view('members');
 });
-// Example 2
-// login url http://www.example.com/login
-// logout url http://www.example.com/logout
-// registration url http://www.example.com/register
-// Route::controllers([
-//     '' => 'Auth\AuthController', 
-//     'password' => 'Auth\PasswordController',
-// ]);
+
+//Controllers
+Route::controllers([
+   'password' => 'Auth\PasswordController',
+]);

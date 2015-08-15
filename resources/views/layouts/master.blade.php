@@ -50,11 +50,11 @@
 					<ul class="pure-menu-list">
 						@if (Auth::guest())
 						<li class="pure-menu-item {{ (Request::is('/') ? 'pure-menu-selected' : '') }}"><a href="/" class="pure-menu-link">Home</a></li>
-						<li class="pure-menu-item {{ (Request::is('register') ? 'pure-menu-selected' : '') }}"><a href="register" class="pure-menu-link">Register</a></li>
-						<li class="pure-menu-item {{ (Request::is('login') ? 'pure-menu-selected' : '') }}"><a href="login" class="pure-menu-link">Login</a></li>
+						<li class="pure-menu-item {{ (Request::is('register') ? 'pure-menu-selected' : '') }}"><a href="auth/register" class="pure-menu-link">Register</a></li>
+						<li class="pure-menu-item {{ (Request::is('login') ? 'pure-menu-selected' : '') }}"><a href="auth/login" class="pure-menu-link">Login</a></li>
 						@else
 						<li class="pure-menu-item {{ (Request::is('members') ? 'pure-menu-selected' : '') }}"><a href="members" class="pure-menu-link">Members Only</a></li>
-						<li class="pure-menu-item {{ (Request::is('logout') ? 'pure-menu-selected' : '') }}"><a href="logout" class="pure-menu-link">Logout</a></li>
+						<li class="pure-menu-item {{ (Request::is('logout') ? 'pure-menu-selected' : '') }}"><a href="/auth/logout" class="pure-menu-link">Logout</a></li>
 						@endif
 					</ul>
 				</div>
